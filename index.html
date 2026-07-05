@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harmony - Your Music Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">🎵 Harmony</div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#artists">Artists</a></li>
+                <li><a href="#player">Player</a></li>
+                <li><a href="#playlist">Playlist</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><button class="theme-toggle" id="themeToggle">🌙</button></li>
+                <li><button class="search-toggle" id="searchToggle">🔍</button></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <!-- Search Bar -->
+        <div class="search-bar" id="searchBar">
+            <input type="text" id="searchInput" placeholder="Search artists, songs, events...">
+            <button id="searchBtn">Search</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <canvas id="audioVisualizer"></canvas>
+        <div class="hero-content">
+            <h1>Welcome to Harmony</h1>
+            <p>Your gateway to amazing music from around the world</p>
+            <button class="cta-button">Explore Now</button>
+        </div>
+    </section>
+
+    <!-- Featured Artists Section -->
+    <section id="artists" class="artists">
+        <h2>Featured Artists</h2>
+        <div class="artists-grid" id="artistsGrid">
+            <!-- Artists will be dynamically loaded -->
+        </div>
+    </section>
+
+    <!-- Music Player Section -->
+    <section id="player" class="player-section">
+        <h2>Now Playing</h2>
+        <div class="player-container">
+            <canvas id="playerVisualizer"></canvas>
+            <div class="player-cover"></div>
+            <div class="player-info">
+                <h3 id="song-title">Midnight Dreams</h3>
+                <p id="artist-name">Luna Echo</p>
+                <div class="progress-bar">
+                    <div class="progress" id="progress"></div>
+                </div>
+                <div class="time-display">
+                    <span id="current-time">0:00</span>
+                    <span id="duration">3:45</span>
+                </div>
+                <div class="player-controls">
+                    <button id="prev-btn" class="control-btn">⏮</button>
+                    <button id="play-btn" class="control-btn play-btn">▶</button>
+                    <button id="next-btn" class="control-btn">⏭</button>
+                </div>
+                <div class="volume-control">
+                    <span>🔊</span>
+                    <input type="range" id="volume" min="0" max="100" value="70">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Playlist Section -->
+    <section id="playlist" class="playlist-section">
+        <h2>Popular Tracks</h2>
+        <div class="playlist-controls">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="favorites">❤️ Favorites</button>
+            <button class="filter-btn" data-filter="recent">Recent</button>
+        </div>
+        <div class="playlist" id="playlistContainer">
+            <!-- Tracks will be dynamically loaded -->
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="events-section">
+        <h2>🎪 Upcoming Events</h2>
+        <div class="events-calendar" id="eventsContainer">
+            <!-- Events will be dynamically loaded -->
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog-section">
+        <h2>📰 Latest News & Articles</h2>
+        <div class="blog-grid" id="blogContainer">
+            <!-- Blog posts will be dynamically loaded -->
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="reviews-section">
+        <h2>⭐ Testimonials & Reviews</h2>
+        <div class="reviews-carousel" id="reviewsContainer">
+            <!-- Reviews will be dynamically loaded -->
+        </div>
+    </section>
+
+    <!-- Merchandise Shop -->
+    <section id="shop" class="shop-section">
+        <h2>🛍️ Official Merchandise</h2>
+        <div class="shop-grid" id="shopContainer">
+            <!-- Products will be dynamically loaded -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Get In Touch</h2>
+        <form class="contact-form" id="contactForm">
+            <input type="text" id="contactName" placeholder="Your Name" required>
+            <input type="email" id="contactEmail" placeholder="Your Email" required>
+            <textarea id="contactMessage" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+        <div class="social-links-footer">
+            <a href="#" target="_blank">🎵 Spotify</a>
+            <a href="#" target="_blank">🎬 YouTube</a>
+            <a href="#" target="_blank">📸 Instagram</a>
+            <a href="#" target="_blank">🐦 Twitter</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Harmony - Your Music Hub. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
+
+    <!-- Artist Profile Modal -->
+    <div class="modal" id="artistModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="artist-profile" id="artistProfileContent">
+                <!-- Artist profile will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
